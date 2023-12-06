@@ -1,0 +1,15 @@
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/bin/Debug/net6.0/snackbar
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/bin/Debug/net6.0/snackbar.deps.json
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/bin/Debug/net6.0/snackbar.runtimeconfig.json
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/bin/Debug/net6.0/snackbar.dll
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/bin/Debug/net6.0/snackbar.pdb
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.csproj.AssemblyReference.cache
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.AssemblyInfoInputs.cache
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.AssemblyInfo.cs
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.csproj.CoreCompileInputs.cache
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.dll
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/refint/snackbar.dll
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.pdb
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/snackbar.genruntimeconfig.cache
+/Users/kaansecen/Desktop/projects/school/fontys/software/sem-1/snackbar_console_app/snackbar/obj/Debug/net6.0/ref/snackbar.dll

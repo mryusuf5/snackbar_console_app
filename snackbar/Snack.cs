@@ -8,40 +8,40 @@ namespace snackbar
 {
     internal class Snack
     {
-        private string name;
-        private double price;
-        private int amountInStock;
+        private readonly string _name;
+        private readonly double _price;
+        private int _amountInStock;
 
         public Snack(string name = "", double price = 0, int amountInStock = 0)
         {
-            this.name = name;
-            this.price = price;
-            this.amountInStock = amountInStock;
+            this._name = name;
+            this._price = price;
+            this._amountInStock = amountInStock;
         }
 
-        public string display()
+        public string Display()
         {
-            return $"Name of snack is {this.name}. It costs {this.price}. There is still {this.amountInStock} in stock.";
+            return $"Name of snack is {this._name}. It costs {this._price}. There is still {this._amountInStock} in stock.";
         }
 
-        public int updateStock(int amount)
+        public int UpdateStock(int amount)
         {
-            return this.amountInStock -= amount;
+            return this._amountInStock -= amount;
         }
 
-        public double totalPrice(int amount)
+        public double TotalPrice(int amount)
         {
-            return amount * this.price;
+            return amount * this._price;
         }
 
-        public bool checkStock(int amount)
+        public bool CheckStock(int amount)
         {
-            return this.amountInStock >= amount ? true : false;
+            return this._amountInStock >= amount;
         }
 
-        public int getStock()
+        public int GetStock()
         {
-            return this.amountInStock;
+            return this._amountInStock;
         }
     }
 }

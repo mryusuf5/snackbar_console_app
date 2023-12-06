@@ -1,48 +1,64 @@
 ﻿using snackbar;
 
-Snack[] snack = new Snack[3];
+List<Snack> snacks = new List<Snack>
+{
+    new Snack("frikandel", 1.50, 10),
+    new Snack("kaaskroket", 1.00, 10),
+    new Snack("loempia", 3.50, 10)
+};
 
-snack[0]  = new Snack("frikandel", 1.50, 10);
-snack[1] = new Snack("kaaskroket", 1, 10);
-snack[2] = new Snack("loempia", 3.50, 10);
-
-double[] orderPrices = new double[3];
-double totalRevenue = 0;
+double[] orderPrices = new double[snacks.Count];
 bool ordering = true;
 
-int snackNumber = 0;
+int snackIndex = 0;
 
-SnackBar snackbar = new SnackBar(snack[0], snack[1], snack[2]);
+SnackBar snackbar = new SnackBar(snacks, 0);
 
-while(ordering)
+while (ordering)
 {
-    Console.WriteLine($"how many of snack number {snackNumber} do you want? \n");
-    string input = Console.ReadLine();
-    
-    if(snack[snackNumber].checkStock(Convert.ToInt32(input)))
+    Console.WriteLine($"How many of snack number {snackIndex} do you want?\n");
+    int userQuantity = GetValidQuantityInput();
+
+    if (snacks[snackIndex].CheckStock(userQuantity))
     {
-        snack[snackNumber].updateStock(Convert.ToInt32(input));
-        orderPrices[snackNumber] = snack[snackNumber].totalPrice(Convert.ToInt32(input));
-        Console.WriteLine(snack[snackNumber].totalPrice(Convert.ToInt32(input)));
+        snacks[snackIndex].UpdateStock(userQuantity);
+        orderPrices[snackIndex] = snacks[snackIndex].TotalPrice(userQuantity);
+        Console.WriteLine(snacks[snackIndex].TotalPrice(userQuantity));
 
-        Console.WriteLine($"you have chosen {input} of snack number {snackNumber}, {snack[snackNumber].display()} \n");
+        Console.WriteLine($"You have chosen {userQuantity} of snack number {snackIndex}, {snacks[snackIndex].Display()}\n");
 
-        snackNumber++;
+        snackIndex++;
 
-        if (snackNumber == 3)
+        if (snackIndex == snacks.Count)
         {
-            totalRevenue += snackbar.calculateTotalRevenue(orderPrices[0], orderPrices[1], orderPrices[2]);
-            Console.WriteLine(snackbar.calculateTotalRevenue(orderPrices[0], orderPrices[1], orderPrices[2]));
-            Console.WriteLine($"your total revenue is {totalRevenue} \n");
+            snackbar.UpdateTotalRevenue(orderPrices);
+            Console.WriteLine(snackbar.GetTotalRevenue());
+            Console.WriteLine($"Your total revenue is {snackbar.GetTotalRevenue()}\n");
             Console.WriteLine("\n \n \n");
             Console.WriteLine("Do you want to keep ordering? (Y or N)\n");
-            string keepOrdering = Console.ReadLine();
-            ordering = keepOrdering is "Y" or "y";
-            snackNumber = 0;
+            string keepOrdering = Console.ReadLine()!;
+            ordering = keepOrdering is "Y" or "y";;
+            snackIndex = 0;
         }
     }
     else
     {
-        Console.WriteLine($"We dont have enough in stock, all we have is {snack[snackNumber].getStock()}\n");
+        Console.WriteLine($"We don't have enough in stock. All we have is {snacks[snackIndex].GetStock()}\n");
+    }
+    
+}
+
+
+int GetValidQuantityInput()
+{
+    while (true)
+    {
+        string input = Console.ReadLine()!;
+        if (int.TryParse(input, out int quantity) && quantity > 0)
+        {
+            return quantity;
+        }
+
+        Console.WriteLine("Invalid input. Please enter a valid positive number.\n");
     }
 }

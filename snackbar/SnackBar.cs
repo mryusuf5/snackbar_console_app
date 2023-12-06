@@ -8,23 +8,28 @@ namespace snackbar
 {
     internal class SnackBar
     {
-        Snack snack1 = new Snack();
-        Snack snack2 = new Snack();
-        Snack snack3 = new Snack();
+        private readonly List<Snack> _snacks;
+        private double _totalRevenue;
 
-        //private double[] totalRevenue;
-        private double totalRevenue;
-
-        public SnackBar(Snack snack1, Snack snack2, Snack snack3)
+        public SnackBar(List<Snack> snacks, double totalRevenue)
         {
-            this.snack1 = snack1;
-            this.snack2 = snack2;
-            this.snack3 = snack3;
+            _snacks = snacks;
+            _totalRevenue = totalRevenue;
         }
 
-        public double calculateTotalRevenue(double totalPriceSnack1, double totalPriceSnack2, double totalPriceSnack3)
+        public void UpdateTotalRevenue(double[] orderPrices)
         {
-            return this.totalRevenue + (totalPriceSnack1 + totalPriceSnack2 + totalPriceSnack3);
+            _totalRevenue += orderPrices.Sum();
+        }
+
+        public double GetTotalRevenue()
+        {
+            return _totalRevenue;
+        }
+
+        public List<Snack> GetSnacks()
+        {
+            return _snacks;
         }
     }
 }
