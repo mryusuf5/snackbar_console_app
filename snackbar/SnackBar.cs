@@ -9,27 +9,22 @@ namespace snackbar
     internal class SnackBar
     {
         private readonly List<Snack> _snacks;
-        private double _totalRevenue;
 
-        public SnackBar(List<Snack> snacks, double totalRevenue)
+        public IReadOnlyList<Snack> Snacks => _snacks.AsReadOnly();
+
+        private decimal _totalRevenue;
+
+        public decimal TotalRevenue { get { return _totalRevenue; } }
+
+        public SnackBar(List<Snack> snacks, decimal totalRevenue)
         {
             _snacks = snacks;
             _totalRevenue = totalRevenue;
         }
 
-        public void UpdateTotalRevenue(double[] orderPrices)
+        public void UpdateTotalRevenue(decimal[] orderPrices)
         {
             _totalRevenue += orderPrices.Sum();
-        }
-
-        public double GetTotalRevenue()
-        {
-            return _totalRevenue;
-        }
-
-        public List<Snack> GetSnacks()
-        {
-            return _snacks;
         }
     }
 }
